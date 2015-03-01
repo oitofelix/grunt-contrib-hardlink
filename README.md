@@ -57,15 +57,15 @@ hardlink: {
         cwd: 'source',
         src: ['foo-*'],
         dest: 'build',
-	filter: 'isFile',
+        filter: 'isFile',
       },
       // All files inside "bar" and its sub-directories, recursively, will be
       // hardlinked into an identical hierarchy under the "tmp" directory.
       {
-	expand: true,
-	src: 'bar/**',
-	dest: 'tmp',
-	filter: 'isFile',
+        expand: true,
+        src: 'bar/**',
+        dest: 'tmp',
+        filter: 'isFile',
       }
     ]
   },
@@ -94,4 +94,4 @@ the task will not work.
 
 Task submitted by [Bruno Félix Rezende Ribeiro](http://oitofelix.freeshell.org/)
 
-*This file was generated on Sun Mar 01 2015 08:37:35.*
+*This file was generated on Sun Mar 01 2015 08:53:55.*
