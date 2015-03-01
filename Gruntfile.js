@@ -34,15 +34,15 @@ module.exports = function(grunt) {
         src: 'test/fixtures/baz.txt',
         dest: 'tmp/baz.txt'
       },
-      dirs: {
-        files: [
+      recursive: {
+	files: [
           {
             expand: true,
-            src: 'test/fixtures/*',
-            dest: 'tmp/dirs',
+            src: 'test/fixtures/**',
+            dest: 'tmp/recursive',
             filter: 'isFile',
           }
-        ],
+	]
       },
       files: {
         files: [

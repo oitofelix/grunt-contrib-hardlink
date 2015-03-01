@@ -30,11 +30,13 @@ exports.hardlink = {
 
     test.done();
   },
-  dirs: function(test) {
-    test.expect(2);
+  recursive: function(test) {
+    test.expect(4);
 
-    test.equal(grunt.file.read('tmp/dirs/test/fixtures/qux.txt'), 'qux!', 'should be the fixture file.');
-    test.equal(grunt.file.read('tmp/dirs/test/fixtures/baz.txt'), 'baz!', 'should be the fixture file.');
+    test.equal(grunt.file.read('tmp/recursive/test/fixtures/qux.txt'), 'qux!', 'should be the fixture file.');
+    test.equal(grunt.file.read('tmp/recursive/test/fixtures/baz.txt'), 'baz!', 'should be the fixture file.');
+    test.equal(grunt.file.read('tmp/recursive/test/fixtures/bar/file.txt'), 'bar!', 'should be the fixture file.');
+    test.equal(grunt.file.read('tmp/recursive/test/fixtures/foo/file.txt'), 'foo!', 'should be the fixture file.');
 
     test.done();
   },
