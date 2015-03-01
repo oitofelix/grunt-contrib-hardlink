@@ -59,6 +59,14 @@ hardlink: {
         dest: 'build',
 	filter: 'isFile',
       },
+      // All files inside "bar" and its sub-directories, recursively, will be
+      // hardlinked into an identical hierarchy under the "tmp" directory.
+      {
+	expand: true,
+	src: 'bar/**',
+	dest: 'tmp',
+	filter: 'isFile',
+      }
     ]
   },
 }
@@ -86,4 +94,4 @@ the task will not work.
 
 Task submitted by [Bruno Félix Rezende Ribeiro](http://oitofelix.freeshell.org/)
 
-*This file was generated on Sun Mar 01 2015 07:47:52.*
+*This file was generated on Sun Mar 01 2015 08:37:35.*

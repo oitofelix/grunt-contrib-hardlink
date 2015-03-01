@@ -29,6 +29,14 @@ hardlink: {
         dest: 'build',
 	filter: 'isFile',
       },
+      // All files inside "bar" and its sub-directories, recursively, will be
+      // hardlinked into an identical hierarchy under the "tmp" directory.
+      {
+	expand: true,
+	src: 'bar/**',
+	dest: 'tmp',
+	filter: 'isFile',
+      }
     ]
   },
 }
