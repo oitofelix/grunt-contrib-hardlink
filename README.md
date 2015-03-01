@@ -84,6 +84,6 @@ the task will not work.
 
 ---
 
-Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
+Task submitted by [Bruno Félix Rezende Ribeiro](http://oitofelix.freeshell.org/)
 
-*This file was generated on Sun Mar 01 2015 07:17:47.*
+*This file was generated on Sun Mar 01 2015 07:47:52.*
