@@ -1,6 +1,6 @@
 /*
- * grunt-contrib-symlink
- * https://github.com/gruntjs/grunt-contrib-symlink
+ * grunt-contrib-hardlink
+ * https://github.com/gruntjs/grunt-contrib-hardlink
  *
  * Copyright (c) 2015 Grunt Team
  * Licensed under the MIT license.
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    symlink: {
+    hardlink: {
       explicit: {
         src: 'test/fixtures/baz.txt',
         dest: 'tmp/baz.txt'
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
             expand: true,
             src: 'test/fixtures/*',
             dest: 'tmp/dirs',
-            filter: 'isDirectory',
+            filter: 'isFile',
           }
         ],
       },
@@ -60,16 +60,7 @@ module.exports = function(grunt) {
             cwd: 'test/fixtures',
             src: '*',
             dest: 'tmp/cwd',
-          }
-        ],
-      },
-      samedir: {
-        files: [
-          {
-            expand: true,
-            cwd: 'tmp',
-            src: '.',
-            dest: 'tmp/samedir',
+            filter: 'isFile',
           }
         ],
       },
@@ -102,7 +93,7 @@ module.exports = function(grunt) {
 
   // Whenever the "test" task is run, first clean the "tmp" dir, then run this
   // plugin's task(s), then test the result.
-  grunt.registerTask('test', ['clean', 'copy', 'symlink', 'nodeunit']);
+  grunt.registerTask('test', ['clean', 'copy', 'hardlink', 'nodeunit']);
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test', 'build-contrib']);

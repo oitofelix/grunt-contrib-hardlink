@@ -22,7 +22,7 @@ var grunt = require('grunt');
     test.ifError(value)
 */
 
-exports.symlink = {
+exports.hardlink = {
   explicit: function(test) {
     test.expect(1);
 
@@ -33,8 +33,8 @@ exports.symlink = {
   dirs: function(test) {
     test.expect(2);
 
-    test.equal(grunt.file.read('tmp/dirs/test/fixtures/foo/file.txt'), 'foo!', 'should be the fixture file.');
-    test.equal(grunt.file.read('tmp/dirs/test/fixtures/bar/file.txt'), 'bar!', 'should be the fixture file.');
+    test.equal(grunt.file.read('tmp/dirs/test/fixtures/qux.txt'), 'qux!', 'should be the fixture file.');
+    test.equal(grunt.file.read('tmp/dirs/test/fixtures/baz.txt'), 'baz!', 'should be the fixture file.');
 
     test.done();
   },
@@ -47,20 +47,11 @@ exports.symlink = {
     test.done();
   },
   cwd: function(test) {
-    test.expect(4);
+    test.expect(2);
 
-    test.equal(grunt.file.read('tmp/cwd/foo/file.txt'), 'foo!', 'should be the fixture file.');
-    test.equal(grunt.file.read('tmp/cwd/bar/file.txt'), 'bar!', 'should be the fixture file.');
     test.equal(grunt.file.read('tmp/cwd/baz.txt'), 'baz!', 'should be the fixture file.');
     test.equal(grunt.file.read('tmp/cwd/qux.txt'), 'qux!', 'should be the fixture file.');
 
     test.done();
   },
-  samedir: function(test) {
-    test.expect(1);
-
-    test.equal(grunt.file.read('tmp/samedir/samedir.txt'), 'samedir!', 'should be the fixture file,');
-
-    test.done();
-  }
 };
