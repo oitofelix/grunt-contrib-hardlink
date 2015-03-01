@@ -1,8 +1,10 @@
 /*
- * grunt-contrib-hardlink
- * https://github.com/gruntjs/grunt-contrib-hardlink
+ * grunt-hardlink
+ * https://github.com/oitofelix/grunt-hardlink
  *
+ * Copyright (c) 2015 Bruno Félix Rezende Ribeiro (oitofelix@gnu.org)
  * Copyright (c) 2015 Grunt Team
+ *
  * Licensed under the MIT license.
  */
 

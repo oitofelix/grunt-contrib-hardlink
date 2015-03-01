@@ -1,3 +1,9 @@
+v0.2.0:
+  date: 2015-03-01
+  changes:
+    - Change name from "grunt-contrib-hardlink" to "grunt-hardlink".
+    - Change author references from "Grunt Team" to "Bruno Félix Rezende Ribeiro".
+    - Add "Bruno Félix Rezende Ribeiro" as a copyright holder.
 v0.1.0:
   date: 2015-03-01
   changes:

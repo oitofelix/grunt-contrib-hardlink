@@ -1,4 +1,4 @@
-# grunt-contrib-hardlink v0.1.0
+# grunt-hardlink v0.2.0
 
 > Create hard links.
 
@@ -10,13 +10,13 @@ This plugin requires Grunt `~0.4.1`
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-contrib-hardlink --save-dev
+npm install grunt-hardlink --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-contrib-hardlink');
+grunt.loadNpmTasks('grunt-hardlink');
 ```
 
 
@@ -88,10 +88,11 @@ the task will not work.
 
 ## Release History
 
+ * 2015-03-01   v0.2.0   Change name from "grunt-contrib-hardlink" to "grunt-hardlink". Change author references from "Grunt Team" to "Bruno Félix Rezende Ribeiro". Add "Bruno Félix Rezende Ribeiro" as a copyright holder.
  * 2015-03-01   v0.1.0   Unofficial release.
 
 ---
 
 Task submitted by [Bruno Félix Rezende Ribeiro](http://oitofelix.freeshell.org/)
 
-*This file was generated on Sun Mar 01 2015 08:53:55.*
+*This file was generated on Sun Mar 01 2015 17:28:04.*
