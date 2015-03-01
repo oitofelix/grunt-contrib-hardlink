@@ -1,6 +1,6 @@
 /*
- * grunt-contrib-symlink
- * https://github.com/gruntjs/grunt-contrib-symlink
+ * grunt-contrib-hardlink
+ * https://github.com/gruntjs/grunt-contrib-hardlink
  *
  * Copyright (c) 2015 Grunt Team
  * Licensed under the MIT license.
@@ -13,7 +13,7 @@ module.exports = function(grunt) {
   var fs = require('fs');
   var path = require('path');
 
-  grunt.registerMultiTask('symlink', 'Create symbolic links.', function() {
+  grunt.registerMultiTask('hardlink', 'Create hard links.', function() {
     var nowrite = grunt.option('no-write');
     var linkCount = 0;
 
@@ -44,30 +44,23 @@ module.exports = function(grunt) {
       }
       // Strip any trailing slashes.
       destpath = destpath.replace(/[\\\/]$/, '');
-      // The destdir is the location in which the symlink will be created.
+      // The destdir is the location in which the hardlink will be created.
       var destdir = path.join(destpath, '..');
-      // If the dest path is relative, create a proper relative symlink path.
-      if (!grunt.file.isPathAbsolute(srcpath)) {
-        srcpath = path.relative(destdir, srcpath) || '.';
-      }
       // Create any necessary interim directories.
       grunt.file.mkdir(destdir);
-      // The symlink mode is determined automatically.
-      var mode = grunt.file.isDir(f.src[0]) ? 'dir' : 'file';
-      grunt.verbose.write((nowrite ? 'Not actually linking ' : 'Linking ') + '(' + mode + ') ' + destpath + ' -> ' + srcpath + '...');
       try {
         if (!nowrite) {
-          fs.symlinkSync(srcpath, destpath, mode);
+          fs.linkSync(srcpath, destpath);
         }
         grunt.verbose.ok();
       } catch(e) {
         grunt.verbose.error();
         grunt.log.error(e);
-        grunt.fail.warn('Failed to create symlink: ' + '(' + mode + ') ' + destpath + ' -> ' + srcpath + '.');
+        grunt.fail.warn('Failed to create hardlink: ' + destpath + ' -> ' + srcpath + '.');
       }
       linkCount++;
     });
-    grunt.log.ok('Created ' + linkCount + ' symbolic links.');
+    grunt.log.ok('Created ' + linkCount + ' hard links.');
   });
 
 };
